@@ -1,0 +1,43 @@
+@media screen and (min-width: 480px) {
+    #primary {
+     width: 50%;
+    float: left;
+    }
+    #secondary {
+     width:40%;
+    float:right;
+    }
+    
+#gallery li {
+ width: 28.333333333333%;   
+}
+
+#gallery li:nth-child(4n) {
+ clear: left;
+}
+    
+    
+}
+
+@media screen and (min-width: 660px) {
+ 
+    nav {
+     background: none;
+        float: right;
+        font-size: 1.125em;
+        margin-right: 5%;
+        text-align: right;
+        width: 45%;
+        margin: 0 auto;
+        margin: 40px;
+    }
+    
+    #logo {
+    text-align: left;
+    float: left;
+    }
+    
+    header {
+     border-bottom: 5px solid green;
+    }
+}
