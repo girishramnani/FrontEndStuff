@@ -4,15 +4,14 @@ email: girishramnani95@gmail.com
 description: "A tech blog for programmers"
 baseurl: ""
 url: "http://programming.github.io/"
-title_description: "A blog containing programming tutorials and projects."
+title_description: "A blog containing programming tutorials, articles and projects."
 title_image: "https://s.gravatar.com/avatar/b8edc48db0c58df91b5bdcb5c86a3e75?s=500&d=mm"
 google_analytics: "UA-20365477-4"
-disqus_account: http://disqus.com/by/girishramnani95 
 addthis_id: ra-5587ec965ee72fbc
 post_limit: 5
 author: Girish Ramnani
 
-# Social usernames/URLs
+# Social usernames/URs
 github_username:  girishramnani
 stackoverflow_link: http://stackoverflow.com/users/4325278/girish-ramnani
 
