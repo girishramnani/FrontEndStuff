@@ -1,0 +1,40 @@
+# Site settings
+title: "Pragmatic"
+email: girishramnani95@gmail.com
+description: "A tech blog for programmers"
+baseurl: ""
+url: "http://programming.github.io/"
+title_description: "A blog containing programming tutorials and projects."
+title_image: "https://s.gravatar.com/avatar/b8edc48db0c58df91b5bdcb5c86a3e75?s=500&d=mm"
+google_analytics: "UA-20365477-4"
+disqus_account: http://disqus.com/by/girishramnani95 
+addthis_id: ra-5587ec965ee72fbc
+post_limit: 5
+author: Girish Ramnani
+
+# Social usernames/URLs
+twitter_username: girish1607
+github_username:  girishramnani
+stackoverflow_link: http://stackoverflow.com/users/4325278/girish-ramnani
+
+# Footer
+footer_left: "Girish Ramnani 2015" 
+# Build settings
+markdown: redcarpet
+redcarpet:
+  extensions: ["no_intra_emphasis", "fenced_code_blocks", "autolink", "strikethrough", "superscript"]
+permalink: pretty
+exclude: [vendor]
+
+
+#Default settings 
+defaults:
+ -
+  scope: 
+   path: ""
+   type: "posts"
+  values:
+   author: Girish Ramnani
+   layout: "post"
+   
+ 
