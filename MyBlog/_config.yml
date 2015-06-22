@@ -13,7 +13,6 @@ post_limit: 5
 author: Girish Ramnani
 
 # Social usernames/URLs
-twitter_username: girish1607
 github_username:  girishramnani
 stackoverflow_link: http://stackoverflow.com/users/4325278/girish-ramnani
 
@@ -36,5 +35,9 @@ defaults:
   values:
    author: Girish Ramnani
    layout: "post"
-   
- 
+ -
+  scope:
+   path: ""
+   type: "pages"
+  values:
+   layout: "page"
