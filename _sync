@@ -1,0 +1,7 @@
+#! /bin/sh
+
+git add --all
+git commit -m "next post"
+echo "sending online"
+git push
+
