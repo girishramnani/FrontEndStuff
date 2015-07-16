@@ -1,0 +1,63 @@
+@import 'reset/reset.css';
+
+
+.nav-bar {
+    
+height: 50px;
+display: block;
+top: 0px;
+width: 100%;
+text-align: center;
+font-family: "Chelsea Market",Georgia,serif;
+font-size: 1em;
+    
+    
+}
+
+.nav-bar li {
+ padding: 10px;
+ display: inline-block;
+ list-style: outside none none;
+ text-align: center;
+ margin-left: 10px;
+ transition: all .3s ease-in-out;    
+    
+}
+
+.nav_container li span {
+    cursor: pointer;
+    transition: all .2s ease;
+    padding:3px;
+    
+}
+
+.nav_container li span:hover {
+ border-bottom: 3px black solid;
+    
+}
+
+
+.nav_container {
+    
+    background-color: cadetblue;
+    
+}
+
+.nav-bar li span {
+ font-size: 20px;
+ text-transform: capitalize;
+}
+
+
+nav {
+    width: 100%;
+ position: fixed;
+    z-index: 10;
+}
+
+.container {
+height: 400px;
+opacity: 1;
+margin: auto;
+text-align: center;
+}
