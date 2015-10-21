@@ -1,0 +1,88 @@
+<html>
+    <head>
+        <title>practical</title>
+    </head>
+    <style>
+        .body{
+         
+            position: relative;
+            
+        }
+        
+        .box {
+            width:50px;
+            height: 50px;
+            display: inline-block;
+        }
+        
+        .box:hover {
+            background-color: darkslategrey;   
+            
+        }
+        .black {
+         
+            background-color: black;
+        }
+        
+        .white {
+            background-color: white;
+        }
+        
+        .box-container {
+            width: 400px;   
+            margin: 0 auto;
+            display: block;
+            border: 1px black solid;
+        }
+        
+     
+    </style>
+    <body>
+       
+    </body>
+    <script>
+        
+        
+        function create_block(container,color){
+            var box = document.createElement("div");
+            box.className ="box "+color();
+            container.appendChild(box);
+            
+        }
+        
+        function create_container() {
+            var container = document.createElement("div");
+            var body = document.querySelector("body");
+            container.className="box-container";
+            body.appendChild(container);
+            return container;
+        }
+        
+        function create_chess_board(Number){
+                var color_selector = ["white","black"];
+                
+                for(var i=0;i<Number;i++){
+                    var container = create_container();
+                    for(var j =0;j<Number;j++){
+                        var box = create_block(container,function(){
+                            if(i%2==0){
+                                return color_selector[j%2];
+                            }
+                            return color_selector[(j+1)%2];   
+                            
+                        });
+                }
+            
+        
+            }
+        }
+        
+        (
+            function() {
+                create_chess_board(8);
+
+              
+            })();
+    
+    </script>
+</html>
