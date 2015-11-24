@@ -1,0 +1,90 @@
+<html>
+    <head>
+    <title>prac 8</title>
+    </head>
+
+    <body>
+
+      <div id="B">
+
+      </div>
+        <div id="A">
+
+            <label for="prime">Enter the number you want to check &nbsp;</label><input id="prime">
+            <button id="work">Check</button>
+            <div id="message"> </div>
+        </div>
+
+
+    </body>
+    <script>
+
+        var number = prompt("Enter the number :");
+        var div = document.getElementById("B");
+
+        div.innerHTML = number.toString().split("").reverse().join("");
+
+        var message  = document.querySelector("#message");
+
+        function primes( number){
+            var number = Number(number);
+            var array = new Array(number+1);
+            for(var i=0;i< number+1;i++){
+
+                array[i] = 1;
+
+            }
+
+            array[0]=0;
+            array[1]=0;
+
+            for(var i=2;i<Math.sqrt(number)+1;i++){
+                for(var j=2*i;j<number+1;j+=i){
+                 array[j] = 0;
+                }
+
+            }
+
+
+            return array;
+
+
+        }
+
+
+
+        var button = document.getElementById("work");
+        button.onclick = function(evt){
+          var input = document.getElementById("prime");
+          input = input.value;
+          console.log(input);
+          var starttime = new Date();
+          starttime = starttime.getTime();
+
+          var prime = primes(input);
+          var endtime = new Date();
+          endtime = endtime.getTime();
+          var time_elp=endtime-starttime;
+          var ans= prime.map(function(number,index){
+            if(number){
+              return index;
+            }
+
+          }).filter(function(number)
+          {if (number){return number}
+        });
+        message.innerHTML = ans.join(",");
+        message.innerHTML+="<br>"+time_elp.toString()+" ms";
+        console.log(ans.join(","))
+
+        }
+
+
+
+
+
+
+
+    </script>
+
+</html>

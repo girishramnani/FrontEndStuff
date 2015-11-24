@@ -1,0 +1,328 @@
+<html>
+    <head>
+        <title>
+        Animations
+        </title>
+        
+        <style>
+            
+            .container {
+                width: 80%;
+                margin-top: 3em;
+                margin: 10px auto;
+                position: relative;
+                
+            }
+            
+        .loading {
+            font-size: 40px;
+            color: white;
+            display: inline-block;
+            position: relative;
+        }
+            div[class^="dot-"]{
+                display: inline-block;  
+                opacity: 0;
+                
+            }
+           
+            body {
+                color: white;
+                font-size: 40px;
+                background-color: aquamarine;
+                
+            }
+            
+            .dot-one {
+                animation: dot-one 2s infinite;  
+            }
+             .dot-two {
+                animation: dot-two 2s infinite;  
+            }
+              .dot-three {
+                animation: dot-three 2s infinite;  
+            }
+            
+            
+          
+            
+            
+            
+            @keyframes dot-one {
+             
+                0% {
+                 opacity: 0;
+                    
+                }
+                
+                30% {
+                    
+                    opacity: 1;
+                
+                }
+                
+                100% {
+                 
+                    opacity: 1%;
+                }
+            }
+
+            
+             @keyframes dot-two {
+             
+                0% {
+                 opacity: 0;
+                    
+                }
+                
+                50% {
+                    
+                    opacity: 1;
+                
+                }
+                
+                100% {
+                 
+                    opacity: 1%;
+                }
+            }
+             
+           @keyframes dot-three {
+             
+                0% {
+                 opacity: 0;
+                    
+                }
+                
+                85% {
+                    
+                    opacity: 1;
+                
+                }
+                
+                
+            }
+          
+          
+            
+            .bouncing-ball{
+                position: relative;
+                margin-top: 100px;
+                height: 10em;
+                
+            }
+            
+            .ball {
+                
+                width: 2em;
+                height: 2em;
+                background: white;
+                border-radius: 50%;
+                position: absolute;
+                animation: bounce 2s infinite ;
+            
+                
+                
+            }
+            
+            
+            @keyframes bounce {
+            
+                
+                0% {
+                    top: 0em;   
+                    animation-timing-function: ease-in;
+                }
+                
+                34% {
+                 
+                    height: 2em;
+                    width: 2em;
+                    
+                }
+                35% {
+                    top: 8em;
+                    height:1.5em;
+                    width:2.5em;
+                    animation-timing-function: ease-out;
+                }
+                
+                45% {
+                    
+                    width:2em;
+                    height: 2em;
+                    
+                    
+                    
+                }
+                
+                90% {
+                    
+                 top: 0;   
+                }
+                
+                100% {
+                 top: 0;   
+                }
+                
+                
+                
+                
+                
+            }
+            
+            
+            .spinner {
+             
+                position: relative;
+                
+            }
+            
+            div[class^="spin-"]{
+              
+                position: absolute;
+                animation: work 2s infinite;
+                
+                
+            }
+            
+            
+            @keyframes work {
+                
+                0% {
+                    
+                  animation-timing-function: ease-in-out;  
+                }
+                
+                50% {
+                    transform: rotate(360deg);
+                    animation-timing-function: ease-in-out;
+                }
+                
+                100 % {
+                 transform: rotate(-720deg);
+                    animation-timing-function:ease-in-out; 
+                    
+                }
+                
+                
+                
+            }
+            
+            .spin-top-left {
+                
+                width: 3rem;
+                height: 3rem;
+                border-top: 0.5rem solid #fff;
+                border-left: 0.5rem solid #fff;
+                border-top-left-radius: 200%;
+                top:0;
+                left:0;
+/*                transform-origin: 100% 0%;*/
+                transform-origin: 100% 100%;
+                
+                
+            }
+            .spin-top-right {
+                
+                width: 2rem;
+                height: 2rem;
+                border-top: 0.5rem solid #fff;
+                border-right: 0.5rem solid #fff;
+                border-top-right-radius: 200%;
+                top:1rem;
+                left:3.5rem;
+                 transform-origin: 0% 100%; 
+                
+            }
+            
+            .spin-bottom-right {
+                
+                width: 3rem;
+                height: 3rem;
+                border-bottom: 0.5rem solid #fff;
+                border-right: 0.5rem solid #fff;
+                border-bottom-right-radius:  200%;
+                top:3.5rem;
+                left:3.5rem;
+                transform-origin: 0% 0%; 
+                
+            }
+            
+            .spin-bottom-left {
+                
+                width: 2rem;
+                height: 2rem;
+                border-bottom: 0.5rem solid #fff;
+                border-left: 0.5rem solid #fff;
+                border-bottom-left-radius: 200%;
+                top:3.5rem;
+                left:1rem;
+                transform-origin: 100%  0%;
+                
+            }
+            
+            .spin-ball {
+             
+                width: 2.25rem;
+                height: 2.25rem;
+                background: white;
+                border-radius: 100%;
+                top:2.25rem;
+                left: 2.25rem;
+                
+                
+            }
+            
+         
+            
+            
+        
+        </style>
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/normalize/3.0.3/normalize.min.css" />
+    </head>
+    
+    <body>
+        <div class="container">
+            <div class="loading">
+            Loading
+            </div>
+            <div class="dot-one">
+            .
+            </div>
+            <div class="dot-two">
+            .
+            </div>
+            <div class="dot-three">
+            .
+            </div>
+            
+             <div class="bouncing-ball">
+            
+                <div class="ball">
+                    
+                    
+                 </div>
+        
+        
+            </div>
+            
+            <div class="spinner">
+            <div class="spin-top-left">
+                </div>
+                
+                <div class="spin-top-right">
+                </div>
+                <div class="spin-bottom-left">
+                </div>
+                <div class="spin-bottom-right">
+                </div>
+                
+                <div class="spin-ball"></div>
+            </div>
+        </div>
+        
+       
+    </body>
+
+</html>

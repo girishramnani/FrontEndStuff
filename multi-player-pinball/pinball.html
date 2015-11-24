@@ -1,0 +1,141 @@
+<html>
+    <head>
+        <title>
+         pinball
+        </title>
+    
+        <style>
+        
+            canvas {
+                border: 2px solid black;
+            }
+        </style>
+    </head>
+    
+    <body>
+        
+        <canvas id="gameCanvas" height="480" width="640">
+        </canvas>
+        
+        
+        <script>
+        
+        function GameObject(context){
+            this.context = context;
+            
+            this.components =[];
+        }
+            
+            GameObject.prototype.add = function(component){
+                this.components.push(component);
+                
+            }
+            GameObject.prototype.draw = function(){
+                self = this;
+                this.components.forEach(function(component){
+                    component.draw(self.context);
+                })
+                
+            }
+            GameObject.prototype.update= function(){
+                this.components.forEach(function(component){
+                    component.update()
+                })
+                
+            }
+            
+            
+           
+            
+            var canvas = document.getElementById("gameCanvas");
+            var ctx = canvas.getContext("2d");
+             var board = new GameObject(ctx);
+            
+             var settings ={
+                wall:{
+                    y:canvas.height,
+                    x:canvas.width
+                }
+                
+                
+            }
+             
+             
+            var ball ={
+                
+                velocity:{
+                    x:3,
+                    y:3,
+                },                
+                location:{
+                    x:50,
+                    y:50       
+                },
+                radius:10,
+                draw: function(ctx){
+                    ctx.clearRect(0,0,canvas.width,canvas.height);
+                    ctx.beginPath();
+                    ctx.arc(this.location.x, this.location.y, this.radius, 0, Math.PI*2, true); 
+                    console.log(this.location.x, this.location.y);
+                    ctx.closePath();
+                    ctx.fill();
+                    
+                },
+                _update:function(dim){
+                    console.log(this.location);
+                    var next = this.location[dim]+this.velocity[dim]+this.radius;
+                    if(next>settings.wall[dim] || next-(2*this.radius) < 0){
+                        this.velocity[dim]*=-1;
+                        
+                    }
+                     this.location[dim]+=(this.velocity[dim]);
+                    
+                   
+                    
+                },
+
+                update:function(){
+                this._update("y");
+                this._update("x");
+                },    
+            }
+            
+            
+             var bar ={
+                dim:{
+                    height:20,
+                    width:50
+                },
+                draw: function(ctx){
+                ctx.beginPath()
+                ctx.rect(300,400,this.dim.width,this.dim.height);
+                ctx.fill();
+                 ctx.closePath();
+            },
+                 update: function(){
+                     
+                 }
+            }
+            
+            
+            
+            board.add(ball);
+            board.add(bar);
+            
+            // game loop
+            
+           setInterval(function(){
+               
+               board.update();
+               board.draw();
+               
+               
+               
+           },20);
+        
+            
+            
+        </script>
+    </body>
+    
+</html>

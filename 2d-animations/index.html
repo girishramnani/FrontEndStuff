@@ -1,0 +1,169 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Two.js: Rubber Ball</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <script src="jquery.js"></script>
+    <script src="two.js"></script>
+      <link rel="stylesheet" href="style.css">
+    <style>
+      * { margin: 0; padding: 0; }
+      body { background: #fcb215; } 
+        
+        .panel {
+            
+             position: relative;
+            top: 30px;
+            margin: 0 auto;
+            display: block;
+            width: 100%;
+            
+        }
+        
+        .box {
+            position: absolute;
+            background-color: azure;
+            display: inline-block;
+            margin:15px;
+            padding: 5px;
+            transition: all 2s;
+                    
+        }
+        
+        
+        .internal_text {
+            
+         
+            display: inline-block;
+            
+            position: absolute;
+            margin: 20px auto;
+            font-size: 2em;
+            text-align: center;
+            padding-left: 5px;
+            
+        }
+        
+        
+        
+    </style>
+  </head>
+  <body>
+      
+      
+      <div class="panel">
+      </div>
+      <div class="input_container">
+          
+          <fieldset>
+      <button type="submit" class="btn">
+      Add element
+      </button>
+              <input>
+              </fieldset>
+      </div>      
+    
+    <div class="scripts">
+      <script>
+          
+          
+          var main_array = ['amit','vaishnavi'];
+          var first=0;
+          function create_element(character,callback){
+                // declaration
+              var rectangle = $('<div/>');
+              var text= $('<p>'+character+"</p>");
+              $(text).addClass('internal_text');
+              $(rectangle).addClass('box');
+              $(rectangle).css({'left':first})
+              first+=120;
+              $(rectangle).width(100).height(100);
+              
+              
+              rectangle.append(text);
+              callback(rectangle);                        
+              
+          }
+          
+          function add_first_element(character){
+                // declaration
+              var rectangle = $('<div/>');
+              var text= $('<p>'+character+"</p>");
+              $(text).addClass('internal_text');
+              $(rectangle).addClass('box');
+              $(rectangle).css({'left':0})
+              
+              $(rectangle).width(100).height(100);
+              
+              rectangle.append(text);
+              
+              setTimeout(
+  function() 
+  {
+    $(".panel").prepend(rectangle); 
+  }, 2000);
+                                     
+              
+          }
+
+          
+          
+        $(function() {
+            
+        main_array.forEach( function(element,num) {
+           create_element(element,function(element)  {$(".panel").append(element)});
+        });
+            
+          
+      });
+          
+          
+           $(".btn").click(function(event){  
+                  event.preventDefault();
+               
+               var value = $("input").val();
+               
+               var arra_element = value.split(",");
+               
+               
+               console.log(arra_element);
+                  
+               arra_element.forEach( function(elment,number) {
+                
+                setTimeout(function() {
+                    console.log(number);
+                   
+               slide()
+               add_first_element(elment);
+               },number*2100);
+               });
+               
+                 
+               
+               
+              
+                  
+         });
+          
+          function slide(){
+            var array = $(".box");
+           $(".box").each( function (element) {
+             var pos_left = $(array[element]).position().left;
+            $(array[element]).animate({'left':pos_left+120});
+               
+               
+           });   
+              
+              
+          }
+          
+          
+         
+      </script>
+    </div>
+    <script>
+     
+    </script>
+  </body>
+</html>
